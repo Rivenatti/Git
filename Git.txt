@@ -59,7 +59,8 @@ git tag -d nazwa			- usunięcie wskazanego taga.
 
 
 git remote add origin <URL.git>
-git push -u origin master
+git push -u origin master		- weryfikowane nadpisywanie
+git push -f origin master		- wymuszony push całego repo
 git remote remove <nazwa>
 
 git remote add <nazwa> <url> 		- dodanie adresu zdalego repozytorium i nazwy.
