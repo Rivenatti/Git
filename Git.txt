@@ -1,0 +1,72 @@
+﻿Git - system kontroli wersji.
+
+Branch 			- kopia robocza/gałąź.
+Master/trunk 		- kopia developerska (kopia musi zawsze działać).
+Tag 			- kopia warta oznaczenia, często po osiągnięciu kamienia milowego np. alpha, beta, RC.
+Merge 			- przeniesienie zmian z jednej kopii do drugiej kopii.
+
+
+git config user.email 'rivenatti@gmail.com'
+git config user.name 'Marcin'
+	
+git config --global help.autocorrect 1
+
+git config -- list
+git config --get-all user.email
+git config --get-all user.name
+
+
+git init				- utworzenie nowego projektu git
+rm -rf .git				- usunięcie projektu git
+git add --all				- dodanie nowych plików do poczekalni
+git status				- sprawdzenie statusu projektu
+git diff				- wyświetla zmiany w śledzonych plikach
+git clone <URL.git>			- klonowanie określonego repozytorium
+git checkout [SHA-1]			- przywrócenie repozytorium do określonego commita
+git checkout -b <nazwa_gałęzi> [SHA-1]	- utworzenie gałęzi z commita
+
+
+git commit -m "treść"				- wykonanie commita o podanej treści
+git commit -a --allow-empty-message -m '' 	- commit o pustej treści
+
+
+git log					- wyświetla wszystkie dokonane zmiany wraz ze szczegółami
+git log --pretty=oneline -2		- wyświetla dokonane zmiany (wyłącznie wiadomości)
+git log --abbrev-commit --abbrev=4 --pretty=oneline
+git log -3	--pretty=format: "%h      %cd    %an"	--since=2012-01-01	--until=2012-01-15
+
+Ciągi znaków:
+	%H - SHA-1;
+	%h - skrócone SHA-1;
+	%an - nazwa autora;
+	%ae - adres email autora;
+
+git branch 				- wyświetlenie gałęzi lokalnych
+git branch <nazwa> 			- stworzenie nowej gałęzi
+git branch -D <nazwa>			- usunięcie wskazanej gałęzi
+git checkout <nazwa>			- zmiana bieżącej gałęzi na wskazaną
+git checkout -b <nazwa>			- stworzenie nowej gałęzi i automatyczna zmiana
+git merge <nazwa>			- przeniesienie zmian ze wskazanej gałęzi do aktualnej
+
+
+git reset --hard <nazwa_gałęzi/SHA-1>	- przywrócenie plików z określonego commita
+
+
+git tag 				- wyświetlenie tagów
+git tag <nazwa> -m ""			- stworzenie nowego taga o wybranej nazwie. Opcjonalnie z komentarzem.
+git tag -d nazwa			- usunięcie wskazanego taga.
+
+
+
+git remote add origin <URL.git>
+git push -u origin master
+git remote remove <nazwa>
+
+git remote add <nazwa> <url> 		- dodanie adresu zdalego repozytorium i nazwy.
+git remote -v 				- wyświetlenie listy repozytoriów.
+git branch -r 				- wyświetlenie gałęzi lokalnych i w repozytorium.
+git push <nazwaRepo> <nazwaBr>		- wysłanie do wskazanego repozytorium wybranego brancha.
+git fetch <nazwaRepo> 			- pobranie zmian ze zdalnego repo.
+git  merge <nazwaRepo/Br> 		- wprowadzenie zmian ze wskazanego repozytorium i gałęzi do lokalnej gałęzi.
+git pull <nazwaRepo> <nazwaBr>		- pobranie zmian ze wskazanego repozytirum do wybranego brancha
+git push origin -- delete <nazwaBr>	- usuwa utworzony branch
