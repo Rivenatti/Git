@@ -50,6 +50,8 @@ git merge <nazwa>			- przeniesienie zmian ze wskazanej gałęzi do aktualnej
 
 
 git reset --hard <nazwa_gałęzi/SHA-1>	- przywrócenie plików z określonego commita
+git reset --soft HEAD~1					- cofnięcie ostatniego commita z zachowaniem uncommitów
+git reset --hard HEAD~1					- cofnięcie ostatniego commita bez zachowania zmian
 
 
 git tag 				- wyświetlenie tagów
