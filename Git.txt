@@ -1,9 +1,9 @@
 ﻿Git - system kontroli wersji.
 
-Branch 			- kopia robocza/gałąź.
+Branch 		- kopia robocza/gałąź.
 Master/trunk 	- kopia developerska (kopia musi zawsze działać).
-Tag 			- kopia warta oznaczenia, często po osiągnięciu kamienia milowego np. alpha, beta, RC.
-Merge 			- przeniesienie zmian z jednej kopii do drugiej kopii.
+Tag 		- kopia warta oznaczenia, często po osiągnięciu kamienia milowego np. alpha, beta, RC.
+Merge 		- przeniesienie zmian z jednej kopii do drugiej kopii.
 
 
 
@@ -18,26 +18,26 @@ git config --get-all user.name
 
 
 
-git init								- utworzenie nowego projektu git
-rm -rf .git								- usunięcie projektu git
-git add --all							- dodanie nowych plików do poczekalni
-git status								- sprawdzenie statusu projektu
-git diff								- wyświetla zmiany w śledzonych plikach
-git clone <URL.git>						- klonowanie określonego repozytorium
-git checkout [SHA-1]					- przywrócenie repozytorium do określonego commit'u
+git init				- utworzenie nowego projektu git
+rm -rf .git				- usunięcie projektu git
+git add --all				- dodanie nowych plików do poczekalni
+git status				- sprawdzenie statusu projektu
+git diff				- wyświetla zmiany w śledzonych plikach
+git clone <URL.git>			- klonowanie określonego repozytorium
+git checkout [SHA-1]			- przywrócenie repozytorium do określonego commit'u
 git checkout -b <nazwa_gałęzi> [SHA-1]	- utworzenie gałęzi z commit'u
 
 
 
-git commit -m "treść"						- wykonanie commit'u o podanej treści
+git commit -m "treść"				- wykonanie commit'u o podanej treści
 git commit -a --allow-empty-message -m '' 	- commit o pustej treści
 
 
 
-git log							- wyświetla wszystkie dokonane zmiany wraz ze szczegółami
-git log --oneline				- wyświetla skróconą historię git'a
-git log --author=""				- wyświetla commit'y podanego użykownika
-git log --grep=""				- wyświetla commit'y, które w swojej historii posiadają zadaną frazę
+git log					- wyświetla wszystkie dokonane zmiany wraz ze szczegółami
+git log --oneline			- wyświetla skróconą historię git'a
+git log --author=""			- wyświetla commit'y podanego użykownika
+git log --grep=""			- wyświetla commit'y, które w swojej historii posiadają zadaną frazę
 git log --pretty=oneline -2		- wyświetla dokonane zmiany (wyłącznie wiadomości)
 
 git log --all --decorate --oneline --graph
@@ -51,11 +51,11 @@ Ciągi znaków:
 	%ae - adres email autora;
 
 
-git branch 					- wyświetlenie gałęzi lokalnych
-git branch <nazwa> 			- stworzenie nowej gałęzi
+git branch 			- wyświetlenie gałęzi lokalnych
+git branch <nazwa> 		- stworzenie nowej gałęzi
 git branch -D <nazwa>		- usunięcie wskazanej gałęzi
-git branch -r 				- wyświetlenie gałęzi lokalnych i w repozytorium.
-git merge <nazwa>			- przeniesienie zmian ze wskazanej gałęzi do aktualnej
+git branch -r 			- wyświetlenie gałęzi lokalnych i w repozytorium.
+git merge <nazwa>		- przeniesienie zmian ze wskazanej gałęzi do aktualnej
 
 git checkout <nazwa>		- zmiana wskaźnika HEAD na wskazany commit lub branch
 git checkout -b <nazwa>		- stworzenie nowej gałęzi i automatyczna zmiana HEAD na wskazaną gałąź z podanym commit'em
@@ -63,21 +63,21 @@ git checkout -b <nazwa>		- stworzenie nowej gałęzi i automatyczna zmiana HEAD 
 git revert <nazwa>			- odwraca zmiany z wybranego commit'u i zapisuje je jego nowy commit (nie modyfikuje historii zmian)
 
 git reset --hard <nazwa_gałęzi/SHA-1>	- przywrócenie plików z określonego commit'u
-git reset --soft HEAD~1					- cofnięcie ostatniego commit'u z zachowaniem zmian w plikach (modyfikuje historię zmian)
-git reset --hard HEAD~1					- cofnięcie ostatniego commit'u bez zachowania zmian w plikach (modyfikuje historię zmian)
+git reset --soft HEAD~1			- cofnięcie ostatniego commit'u z zachowaniem zmian w plikach (modyfikuje historię zmian)
+git reset --hard HEAD~1			- cofnięcie ostatniego commit'u bez zachowania zmian w plikach (modyfikuje historię zmian)
 
 
 
-git tag 					- wyświetlenie tagów
-git tag <nazwa> -m ""		- stworzenie nowego taga o wybranej nazwie. Opcjonalnie z komentarzem.
+git tag 				- wyświetlenie tagów
+git tag <nazwa> -m ""			- stworzenie nowego taga o wybranej nazwie. Opcjonalnie z komentarzem.
 git tag -d nazwa			- usunięcie wskazanego taga.
 
 
 
-git remote add origin <URL.git>	- dodawanie zdalnego repozytorium
-git remote -v 					- wyświetlenie listy repozytoriów.
+git remote add origin <URL.git>		- dodawanie zdalnego repozytorium
+git remote -v 				- wyświetlenie listy repozytoriów.
 git remote remove <nazwa>		- usuwanie zdalnego repozytorium
 git push -u origin master		- weryfikowane nadpisywanie repozytorium
 git push -f origin master		- wymuszony push całego repozytorium
 git fetch <nazwaRepo> 			- pobranie zmian ze zdalnego repozytorium
-	*git merge origin/master	- merge ze zdalnego repozytorium
+*git merge origin/master		- merge ze zdalnego repozytorium
